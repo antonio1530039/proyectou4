@@ -1,6 +1,5 @@
 <?php
   session_start();
-  $_SESSION["login"];
   if($_SESSION["login"]==NULL){
       $_SESSION["login"]=-1;
   }
@@ -82,6 +81,7 @@
                                                       $_SESSION["user"] = $user_info["nombre"];
                                                       $_SESSION["clave_user"] = $user_info["user"];
                                                       $_SESSION["type_user"]=$user_info["privilegios"];
+                                                      $_SESSION["completeInfo"] = $user_info;
                                                       $stmt = "UPDATE usuario SET active=1 WHERE user='".$user."'";
                                                       $conn->query($stmt);
                                         			    }

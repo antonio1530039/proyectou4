@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-11-2017 a las 10:54:32
+-- Tiempo de generación: 04-11-2017 a las 12:21:28
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.10
 
@@ -63,6 +63,7 @@ CREATE TABLE `usuario` (
   `sexo` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `telefono` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `biografia` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `privilegios` int(11) DEFAULT NULL,
   `active` int(11) DEFAULT NULL,
@@ -73,17 +74,9 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `user`, `nombre`, `apellido_paterno`, `apellido_materno`, `fecha_nac`, `sexo`, `telefono`, `email`, `password`, `privilegios`, `active`, `deleted`) VALUES
-(1, 'hitler', 'jose', 'antonio', 'molina', '2017-10-10', 'hombre', '39393', 'iewuweiru', 'adolf', 1, 0, 1),
-(2, 'yuri', 'Yuridia', 'Montelongo', 'Padilla', '0000-00-00', 'Mujer', '7836736', 'yuri@hotmail.com', 'yuri', 0, 0, 1),
-(3, 'mariana', 'Mariana', 'Hinojosa', 'Tijerina', '2017-10-17', 'Mujer', '834784', 'iiuweiwui', 'contramariana', 1, 0, 0),
-(4, 'fher', 'Fher', 'Torres', 'Paz', '2017-10-31', 'Hombre', '2342', '3242324', 'torres', 0, 0, 1),
-(5, 'miguel', 'Miguel', 'hdz', 'rdz', '2017-10-11', 'Hombre', '83483728', 'emailMiguel', 'miguel', 1, 0, 0),
-(6, 'lucesita', 'Luz', 'Gonzalez', 'Torres', '2017-10-28', 'Mujer', '31002321', 'luz@hotmail.com', 'luz', 0, 0, 0),
-(7, 'mario', 'Mario Humberto', 'Rodriguez', 'Chavez', '2017-10-29', 'Hombre', '3129392', 'mario@systemas.com', 'mario', 1, 0, 0),
-(8, 'm', 'Mariana', 'hino', 'tihe', '2017-10-17', 'Mujer', '5454545', 'jhfgjhhj', 'm', 1, 0, 1),
-(9, 'kakashi1', 'Miguel', 'Hernandez', 'Rodriguez', '2017-10-12', 'Hombre', '326472678', 'miguel@hotmail.com', 'kakashi1', 1, 0, 0),
-(10, 'adolf', 'Jose Antonio', 'Molina', 'De la Fuente', '2017-11-30', 'Hombre', '31231', 'qwequwe', 'hitler', 0, 0, 0);
+INSERT INTO `usuario` (`id`, `user`, `nombre`, `apellido_paterno`, `apellido_materno`, `fecha_nac`, `sexo`, `telefono`, `email`, `biografia`, `password`, `privilegios`, `active`, `deleted`) VALUES
+(7, 'mario', 'Mario Humberto', 'Rodriguez', 'Chavez', '1970-01-01', 'Hombre', '31293922', 'mario@systemas.com', '', 'mario', 1, 0, 0),
+(17, 'josea', 'Jose Antonio', 'Molina', 'De la Fuente', '1997-04-17', 'Hombre', '8327489', '1530039@upv.edu.mx', '<p style=\"text-align: center; \"><span style=\"background-color: rgb(255, 255, 0);\"><b>Estudiante de la Universidad PolitÃ©cnica de Victoria</b></span></p><p style=\"text-align: center; \">7Â° Cuatrimestre</p>', 'josea', 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -101,15 +94,6 @@ CREATE TABLE `venta` (
   `clave_usuario` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `deleted` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `venta`
---
-
-INSERT INTO `venta` (`id`, `clave`, `fecha`, `total`, `pago_efectivo`, `pago_tarjeta`, `clave_usuario`, `deleted`) VALUES
-(1, '342', '2017-10-30', '32', '32', '0', 'hitler', 0),
-(2, '2', '2017-10-30', '300', '32', '300', 'hitler', 0),
-(3, '2017-11-01', '2017-11-01', '500', '300', '200', 'adolf', 0);
 
 -- --------------------------------------------------------
 
@@ -172,7 +156,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`

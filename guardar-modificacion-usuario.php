@@ -64,7 +64,7 @@
                     </div>
                     <!-- Top nav left menu -->
                     <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                       <li><a href="#">Sobre nosotros</a></li>
+                       <li><a href="sobre-nosotros.php">Sobre nosotros</a></li>
                        <li><a href="#">Ayuda</a></li>
                     </ul>
                     <!-- Top nav Right menu -->
@@ -92,6 +92,7 @@
                                  return false;
                                }
                              </script>
+                             <li><a href="perfil.php" ><i class="mdi mdi-account"></i> Ver mi perfil</a></li>
                              <li><a href="index.php"  onclick="logout()"><i class="ti-power-off m-r-10"></i> Cerrar sesión</a></li>
                           </ul>
                        </li>
@@ -200,6 +201,7 @@
                                           "'".$_POST["sexo"]."'",
                                           "'".$_POST["telefono"]."'",
                                           "'".$_POST["email"]."'",
+                                          "'".$_POST["biografia"]."'",
                                           "'".$_POST["contra"]."'",
                                           "".$privil.""
                                         );
@@ -211,6 +213,7 @@
                                           "sexo",
                                           "telefono",
                                           "email",
+                                          "biografia",
                                           "password",
                                           "privilegios"
                                         );
@@ -247,6 +250,7 @@
                                 <div class="col-md-12">
                                        <?php
                                             $infoUser = $_SESSION['infouser'];
+                                            $date=date("m-d-Y",strtotime($infoUser["fecha_nac"]));
                                            echo "<br></div><label class='col-md-1 control-label' for='example-email'>Nombre </label>
                                            <div class='col-md-10'>
                                               <input type='text' name='nombre' class='form-control input-lg' required='' value='".$infoUser['nombre']."'>
@@ -268,7 +272,7 @@
                                         <div class='form-group'>
                                            <label class='col-md-1 control-label' for='example-email'>Fecha de nacimiento </label>
                                            <div class='col-md-10'>
-                                              <input type='text' class='form-control input-lg' placeholder='mm/dd/yyyy' id='datepicker' name='fecha_nac' required='' value='".$infoUser['fecha_nac']."'>
+                                              <input type='text' class='form-control input-lg' placeholder='mm/dd/yyyy' id='datepicker' name='fecha_nac' required='' value='".$date."'>
                                            </div>
                                         </div>
                                         <!--Sexo-->
@@ -334,14 +338,19 @@
                                           </div>
                                         </div>
                                           ";
-                                     }
 
+                                     }
+                                     echo " <div class='form-group'>
+                                         <label class='col-md-1 control-label'>Biografía</label>
+                                         <div class='col-md-10'>
+                                            <textarea class='summernote' rows='5' type='text' name='biografia' required=''>".$infoUser["biografia"]."</textarea>
+                                         </div>
+                                      </div>";
                                         ?>
                               <div class="col-sm-8 col-sm-offset-4">
                                   <a href='modificacion-usuario.php'> <button type='button' class='btn btn-danger' name='btn_volver'>Cancelar</button></a>
                                    <input type='submit' class='btn btn-success' name='btn_modificar' value='Modificar usuario'></input>
-
-                              </div>
+                              </div><br><br><br>
 
                            </form>
                   </div>

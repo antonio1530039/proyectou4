@@ -63,7 +63,7 @@
                     </div>
                     <!-- Top nav left menu -->
                     <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                       <li><a href="#">Sobre nosotros</a></li>
+                       <li><a href="sobre-nosotros.php">Sobre nosotros</a></li>
                        <li><a href="#">Ayuda</a></li>
                     </ul>
                     <!-- Top nav Right menu -->
@@ -85,7 +85,13 @@
                        <li class="dropdown top-menu-item-xs">
                           <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="img/user_icon.png" alt="user-img" class="img-circle"> </a>
                           <ul class="dropdown-menu">
-
+                             <script type="text/javascript">
+                             function logout() {
+                                 $.get("logout.php");
+                                 return false;
+                               }
+                             </script>
+                             <li><a href="perfil.php" ><i class="mdi mdi-account"></i> Ver mi perfil</a></li>
                              <li><a href="index.php"  onclick="logout()"><i class="ti-power-off m-r-10"></i> Cerrar sesión</a></li>
                           </ul>
                        </li>

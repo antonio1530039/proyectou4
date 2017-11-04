@@ -61,7 +61,7 @@
                      </div>
                      <!-- Top nav left menu -->
                      <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="sobre-nosotros.php">Sobre nosotros</a></li>
                         <li><a href="#">Ayuda</a></li>
                      </ul>
                      <!-- Top nav Right menu -->
@@ -89,6 +89,7 @@
                                   return false;
                                 }
                               </script>
+                              <li><a href="perfil.php" ><i class="mdi mdi-account"></i> Ver mi perfil</a></li>
                               <li><a href="index.php"  onclick="logout()"><i class="ti-power-off m-r-10"></i> Cerrar sesión</a></li>
                            </ul>
                         </li>

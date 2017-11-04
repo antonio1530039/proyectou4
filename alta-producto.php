@@ -50,7 +50,7 @@
                      </div>
                      <!-- Top nav left menu -->
                      <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="sobre-nosotros.php">Sobre nosotros</a></li>
                         <li><a href="#">Ayuda</a></li>
                      </ul>
                      <!-- Top nav Right menu -->
@@ -78,6 +78,7 @@
                                   return false;
                                 }
                               </script>
+                              <li><a href="perfil.php" ><i class="mdi mdi-account"></i> Ver mi perfil</a></li>
                               <li><a href="index.php"  onclick="logout()"><i class="ti-power-off m-r-10"></i> Cerrar sesión</a></li>
                            </ul>
                         </li>
@@ -239,7 +240,7 @@
                               </div>
                               <div class="col-sm-8 col-sm-offset-4">
                                   <input type="submit" class="btn btn-success" name="btn_registrar" value="Registrar producto"></input>
-                                  <button type="button" class="btn btn-warning ">Limpiar campos</button>
+                                  <a href="alta-producto.php"><button type="button" class="btn btn-warning " name="btn_limpiar22" >Limpiar campos</button></a><br><br>
                               </div>
                            </form>
                   </div>

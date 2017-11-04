@@ -66,7 +66,7 @@
                     </div>
                     <!-- Top nav left menu -->
                     <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                       <li><a href="#">Sobre nosotros</a></li>
+                       <li><a href="sobre-nosotros.php">Sobre nosotros</a></li>
                        <li><a href="#">Ayuda</a></li>
                     </ul>
                     <!-- Top nav Right menu -->
@@ -94,6 +94,7 @@
                                  return false;
                                }
                              </script>
+                             <li><a href="perfil.php" ><i class="mdi mdi-account"></i> Ver mi perfil</a></li>
                              <li><a href="index.php"  onclick="logout()"><i class="ti-power-off m-r-10"></i> Cerrar sesión</a></li>
                           </ul>
                        </li>
@@ -203,11 +204,12 @@
                                                         "'".$_POST["sexo"] ."'",
                                                         "'".$_POST["telefono"] ."'",
                                                         "'".$_POST["email"] ."'",
+                                                        "'".$_POST["biografia"] ."'",
                                                         "'".$_POST["contra"] ."'",
                                                         "'".$priv."'",
                                                         "0",
                                                         "0");
-                                            $col = array("user","nombre","apellido_paterno","apellido_materno","fecha_nac","sexo","telefono","email","password","privilegios","active","deleted");
+                                            $col = array("user","nombre","apellido_paterno","apellido_materno","fecha_nac","sexo","telefono","email","biografia","password","privilegios","active","deleted");
                                             $in = new Insert("usuario",$val,$col);
                                             if($in->ex()){
                                               echo "<div class='alert alert-success alert-dismissible fade in' role='alert'>
@@ -281,6 +283,7 @@
                                        <input type="text" name="telefono" class="form-control input-lg" required="">
                                     </div>
                                  </div>
+
                                  <div class="form-group">
                                     <label class="col-md-1 control-label" for="example-email">E-mail </label>
                                     <div class="col-md-10">
@@ -314,6 +317,13 @@
                                  </select>
                                  </div>
                                </div>
+                               <div class="form-group">
+                                  <label class="col-md-1 control-label">Biografía</label>
+                                  <div class="col-md-10">
+                                     <textarea class="summernote" rows="5" type="text" name="biografia" required=""></textarea>
+                                  </div>
+                               </div>
+
                               <div class="col-sm-8 col-sm-offset-4">
                                  <input type="submit" class="btn btn-success" name="btn_registrar" value="Registrar usuario"></input>
                                  <a href="alta-usuario.php"><button type="button" class="btn btn-warning " name="btn_limpiar22" value="Limpiar campos">Limpiar campos</button></a><br><br>
@@ -354,6 +364,7 @@
       <script src="assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
       <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
       <script src="assets/plugins/summernote/summernote.min.js"></script>
+
       <!-- form advanced init js -->
       <script src="assets/pages/jquery.form-advanced.init.js"></script>
       <!-- Dashboard init -->
